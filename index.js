@@ -9,7 +9,9 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 /* CONFIGURATION DU SERVEUR WEB */
-var port = process.env.PORT || 3010;
+//var port = process.env.PORT || 3010;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 var num_clients = 0;
 var tickInterval;
@@ -26,8 +28,9 @@ var infos_clients = {
 }
 var lastScreenshot;
 
-server.listen(port, function() {
-  console.log('Server listening at port %d', port);
+server.listen(port, ip, function() {
+//  console.log('Server listening at port %d', port);
+console.log('Server running on http://%s:%s', ip, port);
 });
 // route to static files
 app.use(express.static(__dirname + '/public'));
