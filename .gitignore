@@ -61,3 +61,6 @@ typings/
 .next
 # cacher screenshots
 public/screenshots
+
+#fuseki
+fuseki
