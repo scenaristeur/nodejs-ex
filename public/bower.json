@@ -1,0 +1,14 @@
+{
+  "name": "fuseki",
+  "homepage": "https://github.com/scenaristeur/spoggy-openshift",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
